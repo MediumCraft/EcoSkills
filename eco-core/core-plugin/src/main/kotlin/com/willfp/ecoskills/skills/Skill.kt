@@ -73,7 +73,8 @@ class Skill(
             reward,
             it.getInt("levels"),
             it.getIntOrNull("start-level"),
-            it.getIntOrNull("end-level")
+            it.getIntOrNull("end-level"),
+            it.getIntOrNull("every")
         )
     }
 
@@ -261,7 +262,6 @@ class Skill(
                     player.toDispatcher(),
                     TriggerLevelUpSkill,
                     TriggerData(
-                        holder = EmptyProvidedHolder,
                         player = player
                     )
                 ).apply {
